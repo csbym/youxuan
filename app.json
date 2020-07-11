@@ -1,0 +1,23 @@
+{
+  "pages":[
+    "pages/product/product",
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/divide/divide",
+    "pages/cart/cart",
+    "pages/search/search"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black",
+    "navigationStyle":"custom"
+  },
+  "style": "v2",
+  
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

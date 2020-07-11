@@ -1,0 +1,13 @@
+<!--pages/search/search.wxml-->
+<!-- 顶部搜索 -->
+<view class="cu-bar bg-cyan search" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px">
+  <view class="action border-custom"  style="width:{{Custom.width/2}}px;height:{{Custom.height}}px;margin-left:calc(750rpx - {{Custom.right}}px)">
+      <text class="cuIcon-back" bindtap="BackPage"></text>
+       <text class="cuIcon-homefill" bindtap="toHome"></text>
+    </view>
+  <view class="search-form radius"  >
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="请输入商品名称" confirm-type="search"></input>
+  </view>
+  <view style="width:{{Custom.width}}px"></view>
+</view>

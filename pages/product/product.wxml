@@ -1,0 +1,47 @@
+<!--pages/product/product.wxml-->
+<cu-custom bgColor="bg-grey" isSearch="{{true}}" isCustom="{{true}}"></cu-custom>
+<!-- 商品轮播图 -->
+<swiper class="screen-swiper"  circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{product.swiper}}" wx:key>
+    <image src="{{item.image}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.image}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
+
+<!-- 主要信息 -->
+<view class="bg-white margin-bottom-sm" style="padding:30rpx 0 30rpx 30rpx">
+  <view class="padding-bottom">
+    <text class="text-price text-orange text-xxl">{{product.price}}</text>
+    <text class="text-price text-gray text-line-through margin-left">{{product.orginal}}</text>
+  </view>
+  <view class="flex justify-between align-center">
+    <view class="text-xl text-bold" style="width:80%">{{product.title}}</view>
+    <view class="padding-sm radius-left-lg" style="background:#ddd">
+      <text class="cuIcon-share"></text>
+      <text>分享</text>
+    </view>
+  </view>
+</view>
+<!-- 重要信息 -->
+<view class="bg-white margin-bottom-sm padding">
+  <view class="padding-bottom-sm solid-bottom">
+    <text class="text-gray">邮费</text>
+    <text class="margin-left" wx:if="{{product.express.fee==0}}">快递包邮</text>
+    <text class="margin-left" wx:elif="{{product.express.least==0}}">邮费￥{{product.express.fee}}</text>
+    <text class="margin-left" wx:else>邮费￥{{product.express.fee}}，满￥{{product.express.least}}包邮</text>
+  </view>
+  <view class="padding-top-sm flex justify-between">
+    <view>
+      <text class="text-gray">选择</text>
+      <text class="margin-left">请选择规格数量</text>
+    </view>
+    <text class="cuIcon-right text-gray"></text>
+  </view>
+</view>
+<!-- 完整信息 -->
+<view class="bg-white padding solid-bottom flex" style="position:sticky;top:{{CustomBar}}px">
+  <text style="width:33%" class="text-center">图文详情</text>
+  <text style="width:33%" class="text-center  solid-left  solid-right">产品参数</text>
+  <text style="width:33%" class="text-center">商品评价</text>
+</view>
+<view style="height:5000rpx"></view>

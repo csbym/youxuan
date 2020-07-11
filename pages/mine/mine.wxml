@@ -1,0 +1,133 @@
+<!--pages/mine/mine.wxml-->
+<cu-custom bgColor="bg-cyan" isBack=""><view slot="content"></view></cu-custom>
+<!-- 顶部 -->
+<view class="bg-cyan flex justify-between" style="width:100%;height:180rpx">
+  <view class="flex">
+    <view class="margin-left-lg" style="overflow:hidden;width:100rpx;height:100rpx;border-radius:50%">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view style="height:100rpx;line-height:100rpx" class="text-black text-lg margin-left text-bold">
+      <open-data type="userNickName" lang="zh_CN"></open-data>
+    </view>
+  </view>
+  <view style="height:100rpx;line-height:100rpx" class="margin-right">
+    <text class="cu-tag round bg-orange light">每日签到</text>
+  </view>
+</view>
+<!-- 我的订单 -->
+<view class="margin radius padding bg-white">
+  <view class="flex justify-between  solid-bottom padding-bottom-sm margin-bottom-sm">
+    <view class="text-bold text-lg">我的订单</view>
+    <view>
+      <text>查看全部</text>
+      <text class="cuIcon-right text-gray"></text>
+    </view>
+  </view>
+  <view class="flex justify-around">
+    <view class="flex flex-direction align-center">
+      <view class="text-xxl">
+        <text class="cuIcon-pay"></text>
+      </view>
+      <text>待付款</text>
+    </view>
+    <view class="flex flex-direction align-center">
+      <view class="text-xxl">
+        <text class="cuIcon-send"></text>
+      </view>
+      <text>待发货</text>
+    </view>
+    <view class="flex flex-direction align-center">
+     <view class="text-xxl">
+        <text class="cuIcon-deliver"></text>
+      </view>
+      <text>已发货</text>
+    </view>
+    <view class="flex flex-direction align-center">
+     <view class="text-xxl">
+        <text class="cuIcon-comment"></text>
+      </view>
+      <text>待评价</text>
+    </view>
+    <view class="flex flex-direction align-center">
+     <view class="text-xxl">
+        <text class="cuIcon-refund"></text>
+      </view>
+      <text>退换/售后</text>
+    </view>
+  </view>
+</view>
+
+<!-- 我的服务 -->
+<view class="margin radius padding bg-white">
+  <view class="text-bold text-lg solid-bottom padding-bottom-sm margin-bottom-sm">我的服务</view>
+  <view class="flex flex-wrap">
+    <view class="flex flex-direction align-center margin-bottom" style="width:25%">
+      <view class="text-xxl">
+        <text class="cuIcon-discover text-pink"></text>
+      </view>
+      <text>团购订单</text>
+    </view>
+
+    <view class="flex flex-direction align-center margin-bottom"  style="width:25%">
+      <view class="text-xxl">
+        <text class="cuIcon-we text-green"></text>
+      </view>
+      <text>分销详情</text>
+    </view>
+
+    <view class="flex flex-direction align-center margin-bottom"  style="width:25%">
+      <view class="text-xxl">
+        <text class="cuIcon-redpacket text-red"></text>
+      </view>
+      <text>免费领券</text>
+    </view>
+
+     <view class="flex flex-direction align-center margin-bottom"  style="width:25%">
+      <view class="text-xxl">
+        <text class="cuIcon-evaluate text-yellow"></text>
+      </view>
+      <text>积分抽奖</text>
+    </view>
+
+    <view class="flex flex-direction align-center"  style="width:25%">
+      <view class="text-xxl">
+        <text class="cuIcon-location text-blue"></text>
+      </view>
+      <text>地址</text>
+    </view>
+
+    <view class="flex flex-direction align-center"  style="width:25%">
+      <view class="text-xxl">
+        <text class="cuIcon-phone text-orange"></text>
+      </view>
+      <text>客服</text>
+    </view>
+
+
+  </view>
+</view>
+
+
+<!-- 底部操作条 -->
+<view class="cu-tabbar-height"></view>
+<view class="cu-bar tabbar bg-white foot">
+  <navigator class="action text-gray"  url="../index/index"  open-type="redirect">
+      <view class="cuIcon-homefill"></view> 首页
+  </navigator>
+  <navigator class="action text-gray" url="../divide/divide" open-type="redirect">
+    <view class="cuIcon-similar"></view> 分类
+  </navigator>
+  <navigator class="action text-gray" url="../cart/cart"  open-type="redirect">
+    <view class="cuIcon-cart">
+      <view class="cu-tag badge">99</view>
+    </view>
+    购物车
+  </navigator>
+  <navigator class="action  text-red">
+    <view class="cuIcon-my">
+      <view class="cu-tag badge"></view>
+    </view>
+    我的
+  </navigator>
+</view>
+

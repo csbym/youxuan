@@ -1,0 +1,91 @@
+<!-- 顶部搜索 -->
+<cu-custom bgColor="bg-cyan" isSearch="{{true}}"></cu-custom>
+
+<view class="bg-cyan" style="height:200rpx"></view>
+<!-- 轮播图 -->
+<view class="moveTop">
+  <swiper class="card-swiper"  circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+    <swiper-item wx:for="{{swiperList}}" wx:key="item" class="{{cardCur==index?'cur':''}}">
+      <view class="swiper-item">
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+        <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+      </view>
+    </swiper-item>
+  </swiper>
+ 
+  <view class="cu-card">
+     <!-- 分类图标 -->
+    <view class="radius bg-white margin flex justify-around flex-wrap" style="margin-top:0">
+      <navigator class="margin  flex flex-direction align-center" wx:for="{{brandList}}" wx:key="item">
+        <image class="cu-avatar round lg" src="{{item.url}}"></image>
+        <view>{{item.brand}}</view>
+      </navigator>
+    </view>
+    <!-- 热门活动 -->
+     <view class="margin">
+      <image style="width:100%" mode="widthFix" src="https://yanxuan.nosdn.127.net/d9b021de430394e9b274bf0455b53120.gif?imageView&quality=75"></image>
+    </view>
+
+     <!-- 秒杀拼团 -->
+     <view class="cu-item shadow-blur" style="margin:0 30rpx">
+      <view class="flex">
+        <image class="radius-left" style="width:50%" mode="widthFix" src="//m.360buyimg.com/mobilecms/s376x240_jfs/t1/49601/16/12206/115887/5d91b4d5E34709952/aba2bcb4855e6e52.png!q70.jpg.dpg"></image>
+        <image class="radius-right" style="width:50%" mode="widthFix" src="//m.360buyimg.com/mobilecms/s376x240_jfs/t1/32449/33/15631/174497/5cc2d86bE0289110c/9c53e25651659d43.png!q70.jpg.dpg"></image>
+      </view>
+    </view>
+
+    <!-- 瀑布流商品 -->
+    <view class="padding-xs flex justify-between align-start">
+      <view style="width:50%">
+        <view wx:for="{{prodcutList}}" wx:key="index" wx:if="{{index%2 == 0}}" class='bg-white radius margin-xs padding-bottom'>
+          <image style="width:100%" mode="widthFix" class="radius" src="{{item.image}}"></image>
+          <view class="padding-sm">{{item.title}}</view>
+           <view class="padding-left-sm">
+            <text class="text-price text-red text-lg">{{item.price}}</text>
+            <text class="text-price text-gray padding-left-sm text-line-through">{{item.original}}</text>
+          </view>
+        </view>
+      </view>
+      <view style="width:50%">
+        <view wx:for="{{prodcutList}}" wx:key="index" wx:if="{{index%2 != 0}}" class='bg-white radius margin-xs padding-bottom'>
+          <image style="width:100%" class="radius" mode="widthFix" src="{{item.image}}"></image>
+          <view class="padding-sm">{{item.title}}</view>
+          <view class="padding-left-sm">
+            <text class="text-price text-red text-lg">{{item.price}}</text>
+            <text class="text-price text-gray padding-left-sm text-line-through">{{item.original}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+ 
+
+
+  </view>
+</view>
+
+<!-- 底部操作条 -->
+ <view class="cu-tabbar-height"></view>
+ <view class="cu-bar tabbar bg-white foot">
+    <view class="action text-red">
+      <view class="cuIcon-homefill"></view> 首页
+    </view>
+    <navigator class="action text-gray" url="../divide/divide" open-type="redirect">
+      <view class="cuIcon-similar"></view> 分类
+    </navigator>
+    <navigator class="action text-gray" url="../cart/cart"  open-type="redirect">
+      <view class="cuIcon-cart">
+        <view class="cu-tag badge">99</view>
+      </view>
+      购物车
+    </navigator>
+    <navigator class="action text-gray" url="../mine/mine"  open-type="redirect">
+      <view class="cuIcon-my">
+        <view class="cu-tag badge"></view>
+      </view>
+      我的
+    </navigator>
+  </view>
+
+
+

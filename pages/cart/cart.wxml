@@ -1,0 +1,28 @@
+<!--pages/cart/cart.wxml-->
+<cu-custom bgColor="bg-gradual-blue">
+    <view slot="content">
+      购物车
+    </view>
+</cu-custom>
+<!-- 底部操作条 -->
+ <view class="cu-tabbar-height"></view>
+ <view class="cu-bar tabbar bg-white foot">
+    <navigator class="action text-gray"  url="../index/index"  open-type="redirect">
+      <view class="cuIcon-homefill"></view> 首页
+    </navigator>
+    <navigator class="action text-gray" url="../divide/divide" open-type="redirect">
+      <view class="cuIcon-similar"></view> 分类
+    </navigator>
+    <navigator class="action text-red">
+      <view class="cuIcon-cart">
+        <view class="cu-tag badge">99</view>
+      </view>
+      购物车
+    </navigator>
+    <navigator class="action text-gray" url="../mine/mine"  open-type="redirect">
+      <view class="cuIcon-my">
+        <view class="cu-tag badge"></view>
+      </view>
+      我的
+    </navigator>
+  </view>
