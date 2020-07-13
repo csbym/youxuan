@@ -7,7 +7,16 @@
     </view>
   <view class="search-form radius"  >
     <text class="cuIcon-search"></text>
-    <input type="text" placeholder="请输入商品名称" confirm-type="search"></input>
+    <input type="text" placeholder="请输入商品名称" confirm-type="search" bindconfirm="search"></input>
   </view>
   <view style="width:{{Custom.width}}px"></view>
+</view>
+<view class="padding-sm flex justify-between align-center">
+  <text class="text-bold">历史记录</text>
+  <view class="text-xl text-gray">
+    <text class="cuIcon-delete"></text>
+  </view>
+</view>
+<view class="flex flex-start margin-sm">
+  <view class="cu-btn bg-gray round" wx:for="{{searchHistory}}">{{item}}</view>
 </view>

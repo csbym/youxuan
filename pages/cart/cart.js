@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    del:false
   },
 
   /**
@@ -13,6 +13,11 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  changeDel(){
+    this.setData({
+      del:!this.data.del
+    })
   },
 
   /**

@@ -1,12 +1,62 @@
 <!--pages/cart/cart.wxml-->
-<cu-custom bgColor="bg-gradual-blue">
+<cu-custom bgColor="bg-cyan">
     <view slot="content">
       购物车
     </view>
 </cu-custom>
+<view class="text-right" style="padding:15rpx 30rpx 0 0" bindtap="changeDel">{{del?'完成':'管理'}}</view>
+<view class="margin padding radius bg-white" style="margin-top:15rpx">
+  <view class="flex align-center">
+    <checkbox class="round margin-sm"></checkbox>
+    <view class="text-xxl">
+      <text class="cuIcon-shop"></text>
+    </view>
+    <view class="text-bold text-xl  margin-sm">自营店</view>
+    <text class="cuIcon-right"></text>
+  </view>
+  <view class="flex align-center">
+    <checkbox class="round margin-sm"></checkbox>
+    <image src="https://yanxuan-item.nosdn.127.net/522c809c15d5b4ef33cb2a21be31b93d.png?type=webp&imageView&thumbnail=160x0&quality=75" style="width:75px;height:75px"></image>
+    <view class="flex flex-direction flex-start" style="width:380rpx">
+      <text class="margin-bottom-sm">腰椎健康范，护腰塑形坐垫</text>
+      <view class="cu-btn line-grey round flex justify-start margin-bottom-sm" style="height:45rpx;">
+        <text>玫瑰红</text>
+        <text class="cuIcon-triangledownfill text-gray"></text>
+      </view>
+      <view class="flex justify-between align-center">
+        <text class="text-price text-bold text-orange">357</text>
+        <view>
+          <text class="cu-btn line-grey" bindtap="minus"  style="height:45rpx">-</text>
+          <text class="cu-btn line-black"  style="height:45rpx">1{{count}}</text>
+          <text class="cu-btn line-black" bindtap="plus"  style="height:45rpx">+</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
 <!-- 底部操作条 -->
- <view class="cu-tabbar-height"></view>
- <view class="cu-bar tabbar bg-white foot">
+<view class="cu-tabbar-height"></view>
+<view class="cu-bar tabbar bg-white foot solid-bottom" style="bottom:calc(100rpx + env(safe-area-inset-bottom) / 2);">
+  <view class="flex justify-between" style="width:100%">
+    <view class="flex align-center">
+      <checkbox class="round margin-sm"></checkbox>
+      <text class="text-gray">全选</text>
+    </view>
+    <view class="flex align-center" wx:if="{{del}}">
+      <view class="text-xl">
+        <text class="cuIcon-light"></text>
+        <text class="margin-right-sm text-df">清空</text>
+      </view>
+      <view class="cu-btn line-red round lg" bindtap="del"  style="height:45rpx">删除</view>
+    </view>
+    <view class="flex align-center" wx:else>
+      <text class="text-bold text-red margin-right-sm">合计：￥0</text>
+      <view class="cu-btn bg-grey round lg" bindtap="buy">结算</view>
+    </view>
+  </view>
+</view>
+<view class="cu-tabbar-height"></view>
+<view class="cu-bar tabbar bg-white foot">
     <navigator class="action text-gray"  url="../index/index"  open-type="redirect">
       <view class="cuIcon-homefill"></view> 首页
     </navigator>

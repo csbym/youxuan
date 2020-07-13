@@ -16,7 +16,7 @@
   <view class="cu-card">
      <!-- 分类图标 -->
     <view class="radius bg-white margin flex justify-around flex-wrap" style="margin-top:0">
-      <navigator class="margin  flex flex-direction align-center" wx:for="{{brandList}}" wx:key="item">
+      <navigator class="margin  flex flex-direction align-center" wx:for="{{brandList}}" wx:key="item" url="../product/productList">
         <image class="cu-avatar round lg" src="{{item.url}}"></image>
         <view>{{item.brand}}</view>
       </navigator>

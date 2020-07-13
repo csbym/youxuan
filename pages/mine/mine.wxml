@@ -98,6 +98,13 @@
 
     <view class="flex flex-direction align-center"  style="width:25%">
       <view class="text-xxl">
+        <text class="cuIcon-favor text-cyan"></text>
+      </view>
+      <text>收藏</text>
+    </view>
+
+    <view class="flex flex-direction align-center"  style="width:25%">
+      <view class="text-xxl">
         <text class="cuIcon-phone text-orange"></text>
       </view>
       <text>客服</text>

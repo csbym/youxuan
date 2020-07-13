@@ -1,4 +1,5 @@
 <!--pages/product/product.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
 <cu-custom bgColor="bg-grey" isSearch="{{true}}" isCustom="{{true}}"></cu-custom>
 <!-- 商品轮播图 -->
 <swiper class="screen-swiper"  circular="true" autoplay="true" interval="5000" duration="500">
@@ -15,7 +16,7 @@
     <text class="text-price text-gray text-line-through margin-left">{{product.orginal}}</text>
   </view>
   <view class="flex justify-between align-center">
-    <view class="text-xl text-bold" style="width:80%">{{product.title}}</view>
+    <view class="text-xl text-bold" style="width:80%">{{product.subtitle}}</view>
     <view class="padding-sm radius-left-lg" style="background:#ddd">
       <text class="cuIcon-share"></text>
       <text>分享</text>
@@ -30,7 +31,7 @@
     <text class="margin-left" wx:elif="{{product.express.least==0}}">邮费￥{{product.express.fee}}</text>
     <text class="margin-left" wx:else>邮费￥{{product.express.fee}}，满￥{{product.express.least}}包邮</text>
   </view>
-  <view class="padding-top-sm flex justify-between">
+  <view class="padding-top-sm flex justify-between"  bindtap="showSku">
     <view>
       <text class="text-gray">选择</text>
       <text class="margin-left">请选择规格数量</text>
@@ -39,9 +40,109 @@
   </view>
 </view>
 <!-- 完整信息 -->
-<view class="bg-white padding solid-bottom flex" style="position:sticky;top:{{CustomBar}}px">
-  <text style="width:33%" class="text-center">图文详情</text>
-  <text style="width:33%" class="text-center  solid-left  solid-right">产品参数</text>
-  <text style="width:33%" class="text-center">商品评价</text>
+<view class="bg-white padding solid-bottom flex" style="position:sticky;top:{{CustomBar}}px;z-index:2">
+  <text style="width:33%" class="text-center {{contentId==0?'text-red':''}}" bindtap="changeContent" data-id="0">图文详情</text>
+  <text style="width:33%" class="text-center  {{contentId==1?'text-red':''}} solid-left  solid-right"  bindtap="changeContent" data-id="1">产品参数</text>
+  <text style="width:33%" class="text-center  {{contentId==2?'text-red':''}}"  bindtap="changeContent" data-id="2">商品评价</text>
 </view>
-<view style="height:5000rpx"></view>
+<scroll-view scroll-y scroll-with-animation scroll-into-view="content-{{contentId}}" style="height:100vh">
+  <view id="content-0" class="bg-white">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+  <view id="content-1" class="padding bg-white">
+    <view class="padding-sm solid-bottom">
+      <text class="text-gray">商品名称：</text>
+      <text>{{product.title}}</text>
+    </view>
+    <view class="padding-sm solid-bottom">
+      <text class="text-gray">商品编号：</text>
+      <text>{{product.id}}</text>
+    </view>
+    <view class="padding-sm solid-bottom">
+      <text class="text-gray">分类：</text>
+      <text>{{product.class}}</text>
+    </view>
+
+  </view>
+  <view id="content-2" class="padding bg-white">
+    <view class="flex justify-between">
+      <text>优选评价（{{product.commentCount}}）</text>
+      <view class="text-orange">
+        <text>查看全部</text>
+        <text class="cuIcon-right"></text>
+      </view>
+    </view>
+    <view wx:for="{{product.comment}}" class="padding">
+      <view class="flex align-center">
+        <image class="round" style="width:80rpx;height:80rpx" src="{{item.avatarUrl}}"></image>
+        <text class="padding-sm text-gray">{{item.nickName}}</text>
+        <text class="cuIcon-favorfill text-orange"></text>
+        <text class="{{item.score>1?'cuIcon-favorfill text-orange':'cuIcon-favor'}}"></text>
+        <text class="{{item.score>2?'cuIcon-favorfill text-orange':'cuIcon-favor'}}"></text>
+        <text class="{{item.score>3?'cuIcon-favorfill text-orange':'cuIcon-favor'}}"></text>
+        <text class="{{item.score>4?'cuIcon-favorfill text-orange':'cuIcon-favor'}}"></text>
+      </view>
+      <view class="margin-bottom-sm">{{item.content}}</view>
+      <view class="padding-left" wx:if="{{item.reply}}">
+        <text>小姐姐回复：</text>
+        <text class="text-gray">{{item.reply}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 底部固定栏目 -->
+<view class="cu-tabbar-height"></view>
+<view class="cu-bar foot bg-white flex flex-start align-center solid-top">
+  <view class="flex flex-direction align-center padding-sm">
+    <view class="text-xl">
+      <text class="cuIcon-service"></text>
+    </view>
+    <text>客服</text>
+  </view>
+  <view class="flex flex-direction align-center padding-sm">
+    <view class="text-xl">
+      <text class="cuIcon-cart"></text>
+    </view>
+    <text>购物车</text>
+  </view>
+  <view class="flex flex-direction align-center padding-sm" bindtap="collect">
+    <view class="text-xl">
+      <text class="{{collect==1?'cuIcon-favorfill text-orange':'cuIcon-favor'}}"></text>
+    </view>
+    <text>收藏</text>
+  </view>
+  <view class="cu-btn bg-yellow round lg text-bold" bindtap="showSku" id="cart">加入购物车</view>
+  <view class="cu-btn bg-red round lg text-bold" bindtap="showSku" id="buy">立即购买</view>
+</view>
+
+<!-- 具体弹窗 -->
+<view class="cu-modal bottom-modal {{showSku?'show':''}}"  style="z-index:3" catchtouchmove="preventMove">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white">
+      <view class="action"></view>
+      <view class="action cuIcon-close" bindtap="hideSku"></view>
+    </view>
+    <view style="height:70vh;padding:0 30rpx 30rpx 30rpx">
+      <view class="flex flex-start align-end margin-bottom-sm">
+        <image src="https://yanxuan-item.nosdn.127.net/fa3a0c0d86535882de238593e6271aaa.png?type=webp&quality=90&thumbnail=200x200&imageView" style="width:100px;height:100px"></image>
+        <view>
+          <view class="text-red text-left">价格：￥359</view>
+          <view>已选择：请选择规格</view>
+        </view>
+      </view>
+      <view class="text-left">颜色</view>
+      <view  class="text-left">
+        <text class="cu-btn line-black margin-sm">玫瑰红</text>
+        <text class="cu-btn line-black  margin-sm ">古典灰</text>
+      </view>
+      <view class="text-left">数量</view>
+      <view  class="text-left margin-sm">
+        <text class="cu-btn line-grey" bindtap="minus">-</text>
+        <text class="cu-btn line-black" style="padding:0 40rpx">{{count}}</text>
+        <text class="cu-btn line-black" bindtap="plus">+</text>
+      </view>
+    </view>
+  </view>
+</view>
+

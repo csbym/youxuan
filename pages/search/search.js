@@ -9,13 +9,18 @@ Page({
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
+    searchHistory:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var searchHistory = wx.getStorageSync('searchHistory') || []
+    this.setData({
+      searchHistory
+    })
+    
   },
   BackPage() {
     wx.navigateBack({
@@ -25,6 +30,18 @@ Page({
   toHome(){
     wx.reLaunch({
       url: '/pages/index/index',
+    })
+  },
+  search(e){
+    console.log(e)
+    var searchHistory=this.data.searchHistory
+    searchHistory.unshift(e.detail.value)
+    if(searchHistory.length>5){
+      searchHistory.pop()
+    }
+    wx.setStorageSync('searchHistory', searchHistory)
+    this.setData({
+      searchHistory
     })
   },
 
