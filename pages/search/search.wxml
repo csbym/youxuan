@@ -13,10 +13,10 @@
 </view>
 <view class="padding-sm flex justify-between align-center">
   <text class="text-bold">历史记录</text>
-  <view class="text-xl text-gray">
+  <view class="text-xl text-gray" bindtap="del">
     <text class="cuIcon-delete"></text>
   </view>
 </view>
-<view class="flex flex-start margin-sm">
-  <view class="cu-btn bg-gray round" wx:for="{{searchHistory}}">{{item}}</view>
+<view class="flex flex-start margin-sm flex-wrap">
+  <view class="cu-btn bg-gray round margin-right-sm" wx:for="{{searchHistory}}">{{item}}</view>
 </view>

@@ -82,9 +82,15 @@ Page({
       })
     }else{
       if(id=='buy'){
+        wx.navigateTo({
+          url: '../pay/pay',
+        })
 
       }else{
-        
+        wx.showToast({
+          title: '加入购物车成功',
+        })
+        this.hideSku()
       }
     }
   },

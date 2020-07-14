@@ -3956,3 +3956,6 @@ scroll-view.cu-steps .cu-item {
 .lines-white {
 	color: var(--white);
 }
+.border-bottom-red{
+	border-bottom: 8rpx solid var(--red);
+}

@@ -37,7 +37,7 @@
     <!-- 瀑布流商品 -->
     <view class="padding-xs flex justify-between align-start">
       <view style="width:50%">
-        <view wx:for="{{prodcutList}}" wx:key="index" wx:if="{{index%2 == 0}}" class='bg-white radius margin-xs padding-bottom'>
+        <view wx:for="{{prodcutList}}" wx:key="index" wx:if="{{index%2 == 0}}" class='bg-white radius margin-xs padding-bottom' bindtap="jumpProduct" data-="{{item.id}}">
           <image style="width:100%" mode="widthFix" class="radius" src="{{item.image}}"></image>
           <view class="padding-sm">{{item.title}}</view>
            <view class="padding-left-sm">
@@ -47,7 +47,7 @@
         </view>
       </view>
       <view style="width:50%">
-        <view wx:for="{{prodcutList}}" wx:key="index" wx:if="{{index%2 != 0}}" class='bg-white radius margin-xs padding-bottom'>
+        <view wx:for="{{prodcutList}}" wx:key="index" wx:if="{{index%2 != 0}}" class='bg-white radius margin-xs padding-bottom' bindtap="jumpProduct" data-="{{item.id}}">
           <image style="width:100%" class="radius" mode="widthFix" src="{{item.image}}"></image>
           <view class="padding-sm">{{item.title}}</view>
           <view class="padding-left-sm">

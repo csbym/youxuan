@@ -1,0 +1,19 @@
+<!--pages/address/address.wxml-->
+<cu-custom bgColor="bg-white"  isBack="{{true}}">
+  <view slot="content">地址管理</view>
+</cu-custom>
+<view style="background:url(http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/address-bg-67880192dc.png?imageView&type=webp) repeat-x;width:100%;height:16rpx"></view>
+<view class="solid-bottom padding flex align-center bg-white" style="border-left:10rpx solid rgb(200, 0, 0)"  bindtap="chooseAddress">
+  <view  style="width:150rpx">
+    <view class="margin-bottom-sm text-left">张三</view>
+    <view class="cu-btn line-red sm text-left" style="height:35rpx">默认</view>
+  </view>
+  <view class="width:450rpx">
+    <view class="margin-bottom-sm">12312312312</view>
+    <view class="text-gray">浙江省杭州市西湖区XX小区x-x-xxxx</view>
+  </view>
+  <view class="text-xxl text-gray text-right" style="width:80rpx">
+    <text class="cuIcon-edit" catchtap="adjustAddress"></text>
+  </view>
+</view>
+<view class="cu-btn line-red round lg" style="width:700rpx;margin:25rpx;position:fixed;bottom:0" bindtap="addAddress">+新建地址</view>

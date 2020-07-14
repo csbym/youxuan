@@ -1,11 +1,16 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/order/orderList",
+    "pages/order/order",
+    "pages/mine/mine",
     "pages/product/product",
+    "pages/address/address",
+    "pages/address/add",
+    "pages/divide/divide",
+    "pages/pay/pay",
     "pages/product/productList",
     "pages/cart/cart",
-    "pages/mine/mine",
-    "pages/divide/divide",
     "pages/search/search"
   ],
   "window":{

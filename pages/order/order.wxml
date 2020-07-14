@@ -1,0 +1,84 @@
+<!--pages/order/order.wxml-->
+<cu-custom bgColor="bg-white"  isBack="{{true}}">
+  <view slot="content">订单详情</view>
+</cu-custom>
+<!-- 地址信息 -->
+<view class="bg-white radius margin-bottom" bindtap="jumpAddress">
+  <view style="background:url(http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/address-bg-67880192dc.png?imageView&type=webp) repeat-x;width:100%;height:16rpx"></view>
+  <view class="padding-sm flex justify-between align-center">
+    <view>
+      <view class="flex align-center">
+      <view class="cu-btn bg-red round sm margin-right-sm">默认</view>
+        <text>浙江省杭州市西湖区</text>
+      </view>
+      <view class="margin-sm text-bold text-lg">XX小区x-x-xxxx</view>
+      <text space="emsp">张三 12312312312</text>
+    </view>
+    <view class="text-xl text-gray">
+      <text class="cuIcon-right"></text>
+    </view>
+  </view>
+</view>
+<!-- 订单信息 -->
+<view class="margin-bottom padding radius bg-white">
+  <view class="flex align-center">
+    <view class="text-xl">
+      <text class="cuIcon-shop"></text>
+    </view>
+    <view class="margin-sm">自营店</view>
+    <text class="cuIcon-right"></text>
+  </view>
+  <view class="flex align-center">
+    <image src="https://yanxuan-item.nosdn.127.net/522c809c15d5b4ef33cb2a21be31b93d.png?type=webp&imageView&thumbnail=160x0&quality=75" style="width:75px;height:75px"></image>
+    <view class="flex flex-direction flex-start" style="width:400rpx margin:0 15rpx">
+      <text class="margin-bottom-sm">腰椎健康范，护腰塑形坐垫</text>
+      <text class="text-gray" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">玫瑰红</text>
+    </view>
+    <view class="flex flex-direction" style="width:150rpx">
+      <text class="text-price text-right">347.00</text>
+      <text class="text-gray  text-right">×1</text>
+    </view>
+  </view>
+</view>
+<view class="margin-bottom padding raidus bg-white">
+  <view class="flex justify-between align-center">
+    <view>
+      <text class="text-gray" space="emsp">订单编号：</text>
+      <text>184848448</text>
+    </view>
+    <view class="cu-btn line-black" style="height:38rpx">复制</view>
+  </view>
+  <view class="padding-bottom-sm solid-bottom">
+    <text class="text-gray">下单时间：</text>
+    <text space="emsp">2020-7-14 16:39</text>
+  </view>
+  <view class="padding-top-sm">
+    <text class="text-gray">支付方式</text>
+    <text space="emsp"> 微信</text>
+  </view>
+  <view class="">
+    <text class="text-gray">商品总价</text>
+    <text  space="emsp"> ￥347</text>
+  </view>
+  <view class="padding-bottom-sm solid-bottom">
+    <text class="text-gray">邮费</text>
+    <text space="emsp">   ￥20</text>
+  </view>
+  <view class="padding-top-sm text-lg text-red">
+    <text >应付合计</text>
+    <text space="emsp">   ￥367</text>
+  </view>
+</view>
+
+<!-- 底部提交订单 -->
+<view class="cu-tabbar-height"></view>
+<view class="cu-bar foot bg-white flex justify-between align-center padding-left">
+  <view>
+    <text>应付：</text>
+    <text class="text-red text-price text-lg text-bold">367</text>
+  </view>
+  <view>
+    <view class="cu-btn line-black round lg text-bold margin-right-sm"  style="width:220rpx">取消订单</view>
+    <view class="cu-btn bg-red round lg text-bold"   style="width:220rpx">付款</view>
+  </view>
+</view>

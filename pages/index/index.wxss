@@ -4,7 +4,7 @@
   top:-200rpx;
 }
 page{
-  background:#ddd;
+  background:#eee;
 }
 
 .cardTitle{

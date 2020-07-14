@@ -8,10 +8,10 @@
 <view class="margin padding radius bg-white" style="margin-top:15rpx">
   <view class="flex align-center">
     <checkbox class="round margin-sm"></checkbox>
-    <view class="text-xxl">
+    <view class="text-xl">
       <text class="cuIcon-shop"></text>
     </view>
-    <view class="text-bold text-xl  margin-sm">自营店</view>
+    <view class="text-bold text-lg  margin-sm">自营店</view>
     <text class="cuIcon-right"></text>
   </view>
   <view class="flex align-center">
@@ -20,7 +20,7 @@
     <view class="flex flex-direction flex-start" style="width:380rpx">
       <text class="margin-bottom-sm">腰椎健康范，护腰塑形坐垫</text>
       <view class="cu-btn line-grey round flex justify-start margin-bottom-sm" style="height:45rpx;">
-        <text>玫瑰红</text>
+        <text style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" bindtap="showSku">玫瑰红</text>
         <text class="cuIcon-triangledownfill text-gray"></text>
       </view>
       <view class="flex justify-between align-center">

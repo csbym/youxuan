@@ -11,7 +11,7 @@
   </scroll-view>
   <scroll-view class="VerticalMain solid-left" scroll-y scroll-with-animation style="height:100vh" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
     <view class="padding-top padding-lr" wx:for="{{list}}" wx:key="item" id="main-{{index}}">
-      <view class='cu-bar solid-bottom bg-white'>
+      <view class='cu-bar bg-white'>
         <view class='action'>
           <text class='cuIcon-title text-red'></text>{{item.name}} </view>
       </view>

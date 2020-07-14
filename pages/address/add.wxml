@@ -1,0 +1,28 @@
+<!--pages/address/add.wxml-->
+<cu-custom bgColor="bg-white"  isBack="{{true}}">
+  <view slot="content">新增地址</view>
+</cu-custom>
+<form bindsubmit="submit">
+  <view class="cu-form-group">
+		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}" name="ssx">
+			<view class="picker {{region?'':'text-gray'}}" style="text-align:left">{{region?region[0]+','+region[1]+','+region[2]:'省份、城市、区县'}}</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<input placeholder="详细地址如街道楼盘号等" name="address"></input>
+	</view>
+  <view class="cu-form-group">
+		<input placeholder="姓名" name="name"></input>
+	</view>
+  	<view class="cu-form-group">
+		<input placeholder="手机号码" type="number" name="phone"></input>
+	</view>
+  <view class="cu-form-group margin-top">
+    <view class="title">设为默认</view>
+    <switch class="radius sm"></switch>
+  </view>
+  <view class="flex" style="position:fixed;bottom:0;width:100%">
+    <button class="bg-white" style="width:50%;" bindtap="cancel">取消</button>
+    <button class="bg-red" style="width:50%;" form-type="submit">保存</button>
+  </view>
+</form>

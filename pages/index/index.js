@@ -76,7 +76,13 @@ Page({
     wx.navigateTo({
       url: '../search/search',
     })
-  }
+  },
+  jumpProduct(e){
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../product/product?id='+id,
+    })
+  },
 
 
 })

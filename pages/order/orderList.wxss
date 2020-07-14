@@ -1,0 +1,4 @@
+/* pages/order/orderList.wxss */
+page{
+  background: #eee;
+}

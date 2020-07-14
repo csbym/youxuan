@@ -1,4 +1,4 @@
-// pages/mine/mine.js
+// pages/address/address.js
 Page({
 
   /**
@@ -14,8 +14,16 @@ Page({
   onLoad: function (options) {
 
   },
-  
-
+  addAddress(){
+    wx.navigateTo({
+      url: 'add',
+    })
+  },
+  adjustAddress(){
+    wx.navigateTo({
+      url: 'add',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

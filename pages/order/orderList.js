@@ -1,11 +1,11 @@
-// pages/mine/mine.js
+// pages/order/orderList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    tap:0
   },
 
   /**
@@ -14,7 +14,16 @@ Page({
   onLoad: function (options) {
 
   },
-  
+  changeTap(e){
+    // wx.showLoading({
+    //   title: '载入中...',
+    // })
+    var tap = e.currentTarget.dataset.id;
+    this.setData({
+      tap
+    })
+    
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

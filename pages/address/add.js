@@ -1,11 +1,11 @@
-// pages/mine/mine.js
+// pages/address/add.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    region:false,
   },
 
   /**
@@ -14,7 +14,17 @@ Page({
   onLoad: function (options) {
 
   },
-  
+  RegionChange: function(e) {
+    this.setData({
+      region: e.detail.value
+    })
+  },
+  submit(e){
+    console.log(e)
+  },
+  cancel(){
+    wx.navigateBack({delta: 1})
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

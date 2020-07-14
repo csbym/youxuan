@@ -1,0 +1,46 @@
+<!--pages/order/orderList.wxml-->
+<cu-custom bgColor="bg-white"  isBack="{{true}}">
+  <view slot="content">我的订单</view>
+</cu-custom>
+<view class="flex justify-around bg-white margin-bottom-sm">
+  <text class="{{tap==0?'text-red border-bottom-red':''}}" bindtap="changeTap" style="padding:5rpx 10rpx" data-id="0">全部</text>
+  <text class="{{tap==1?'text-red border-bottom-red':''}}" bindtap="changeTap" style="padding:5rpx 10rpx" data-id="1">待付款</text>
+  <text class="{{tap==2?'text-red border-bottom-red':''}}" bindtap="changeTap" style="padding:5rpx 10rpx" data-id="2">待发货</text>
+  <text class="{{tap==3?'text-red border-bottom-red':''}}" bindtap="changeTap" style="padding:5rpx 10rpx" data-id="3">已发货</text>
+  <text class="{{tap==4?'text-red border-bottom-red':''}}" bindtap="changeTap" style="padding:5rpx 10rpx" data-id="4">待评价</text>
+</view>
+<view class="padding marigin-bottom bg-white">
+  <view class="padding-bottom solid-bottom" style="width:100%">订单编号：182823338</view>
+  <view class="flex align-center">
+    <view class="text-xl">
+      <text class="cuIcon-shop"></text>
+    </view>
+    <view class="margin-sm">自营店</view>
+    <text class="cuIcon-right"></text>
+  </view>
+  <view class="flex align-center">
+    <image src="https://yanxuan-item.nosdn.127.net/522c809c15d5b4ef33cb2a21be31b93d.png?type=webp&imageView&thumbnail=160x0&quality=75" style="width:75px;height:75px"></image>
+    <view class="flex flex-direction flex-start" style="width:400rpx margin:0 15rpx">
+      <text class="margin-bottom-sm">腰椎健康范，护腰塑形坐垫</text>
+      <text class="text-gray" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">玫瑰红</text>
+    </view>
+    <view class="flex flex-direction" style="width:150rpx">
+      <text class="text-price text-right">347.00</text>
+      <text class="text-gray  text-right">×1</text>
+    </view>
+  </view>
+  <view class="text-right text-lg margin-bottom">
+    <text class="text-gray">总价</text>
+    <text class="text-price text-gray" space="emsp">367 </text>
+    <!-- <text class="text-gray" wx:if="{{}}">优惠</text>
+    <text class="text-price text-gray">5</text> -->
+    <text class="text-bold">需付款</text>
+    <text class="text-price text-bold">367</text>
+  </view>
+  <view class="text-right">
+    <view class="cu-btn bg-red radius">付款</view>
+    <!-- <view class="cu-btn line-black radius">查看物流</view>
+    <view class="cu-btn line-orange radius">评价</view>
+    <view class="cu-btn line-orange radius">确认收货</view> -->
+  </view>
+</view>

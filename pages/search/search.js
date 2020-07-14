@@ -44,6 +44,12 @@ Page({
       searchHistory
     })
   },
+  del(){
+    wx.setStorageSync('searchHistory', [])
+    this.setData({
+      searchHistory:[]
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
