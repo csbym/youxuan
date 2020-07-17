@@ -1,0 +1,38 @@
+<!--pages/sign/sign.wxml-->
+<cu-custom bgColor="bg-grey" isCustom="{{true}}"><view slot="content">积分中心</view></cu-custom>
+<view class="flex justify-between align-center" style="background-image:url(//yanxuan.nosdn.127.net/6b49731e1ed23979a89f119048785bba.png?quality=75&type=webp&imageView&thumbnail=750x0);background-size:100%;width:100%;height:300rpx">
+  <view class="flex align-center justify-start margin-left">
+    <view style="overflow:hidden;width:100rpx;height:100rpx;border-radius:50%">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <text class="text-xl text-bold text-white margin-left-sm">您的可用积分:</text>
+    <text class="text-xxl text-bold text-white margin-left-sm">16</text>
+  </view>
+  <view class="bg-white text-brown padding-sm text-bold" style="border-radius:50rpx 0 0 50rpx">
+    <text class="cuIcon-sort"></text>
+    <text>账单</text>
+  </view>
+</view>
+<view class="bg-brown light flex padding flex-direction">
+  <text class="text-bold text-brown">签到有礼</text>
+  <view class="cu-steps margin-bottom">
+    <view class="cu-item {{index>num-1?'':'text-brown'}}" wx:for="{{numList}}" wx:key>
+      <text class="num {{item.check?'':'err'}}" data-index="{{item.score}}"></text> {{item.name}}
+    </view>
+  </view>
+  <view class="radius bg-white text-brown margin padding-sm text-bold text-bold text-xl text-center" bindtap="signIn">{{sign?'已连续签到1天':'签到'}}</view>
+</view>
+
+<view class="cu-modal {{showModal?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">签到成功</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      恭喜您获得{{numList[num-1].score}}积分
+    </view>
+  </view>
+</view>

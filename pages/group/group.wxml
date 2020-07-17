@@ -1,0 +1,185 @@
+<!--pages/group/group.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<cu-custom bgColor="bg-cyan" isCustom="{{true}}"><view slot="content">优选拼团</view></cu-custom>
+<!-- 商品轮播图 -->
+<swiper class="screen-swiper"  circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{product.swiper}}" wx:key>
+    <image src="{{item.image}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.image}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
+
+<!-- 主要信息 -->
+<view class="bg-white margin-bottom-sm">
+  <view class="flex justify-between align-center bg-red padding margin-bottom-sm">
+    <view>
+      <text class="text-price text-xxl">{{product.price}}</text>
+      <text class="text-price text-line-through">{{product.orginal}}</text>
+    </view>
+    <view class="padding-right">2人团·已拼8213件</view>
+  </view>
+  <view class="flex justify-between align-center padding-left">
+    <view class="text-xl text-bold" style="width:80%">{{product.subtitle}}</view>
+    <view class="padding-sm radius-left-lg" style="background:#ddd">
+      <text class="cuIcon-share"></text>
+      <text>分享</text>
+    </view>
+  </view>
+</view>
+<!-- 重要信息 -->
+<view class="bg-white margin-sm">
+    <text class="text-gray">邮费</text>
+    <text class="margin-left" wx:if="{{product.express.fee==0}}">快递包邮</text>
+    <text class="margin-left" wx:elif="{{product.express.least==0}}">邮费￥{{product.express.fee}}</text>
+    <text class="margin-left" wx:else>邮费￥{{product.express.fee}}，满￥{{product.express.least}}包邮</text>
+</view>
+<!-- 参团信息 -->
+<view class="padding bg-white">
+  <view class="margin-bottom-sm">这些人刚刚开团成功，可插队去参团</view>
+  <swiper autoplay="true" vertical="true" circular="true">
+    <block wx:for="{{res_group_list}}" wx:key="index">
+      <swiper-item>
+        <view class="flex justify-between align-center padding solid-top">
+          <view class="flex align-center">
+            <image src="{{item[0].avatarUrl}}" style="width:80rpx;height:80rpx;border-radius:50%" class="margin-right-sm"></image>
+            <text>{{item[0].nickName}}</text>
+          </view>
+          <view class="flex align-center justify-start">
+            <view class="flex flex-direction align-center padding-right-sm">
+              <view>
+                <text>仅剩</text>
+                <text class="text-red">1个</text>
+                <text>名额</text>
+              </view>
+              <text class="text-sm">剩余{{item[0].time}}</text>
+            </view>
+            <view class="bg-red round" style="padding:0 10rpx">插队参团</view>
+          </view>
+        </view>
+        <view class="flex justify-between align-center padding solid-top">
+          <view class="flex align-center">
+            <image src="{{item[1].avatarUrl}}" style="width:80rpx;height:80rpx;border-radius:50%" class="margin-right-sm"></image>
+            <text>{{item[1].nickName}}</text>
+          </view>
+          <view class="flex align-center justify-start">
+            <view class="flex flex-direction align-center padding-right-sm">
+              <view>
+                <text>仅剩</text>
+                <text class="text-red">1个</text>
+                <text>名额</text>
+              </view>
+              <text class="text-sm">剩余{{item[1].time}}</text>
+            </view>
+            <view class="bg-red round" style="padding:0 10rpx">插队参团</view>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+</view>
+<!-- 完整信息 -->
+<view class="bg-white padding solid-bottom flex" style="position:sticky;top:{{CustomBar}}px;z-index:2">
+  <text style="width:33%" class="text-center {{contentId==0?'text-red':''}}" bindtap="changeContent" data-id="0">图文详情</text>
+  <text style="width:33%" class="text-center  {{contentId==1?'text-red':''}} solid-left  solid-right"  bindtap="changeContent" data-id="1">产品参数</text>
+  <text style="width:33%" class="text-center  {{contentId==2?'text-red':''}}"  bindtap="changeContent" data-id="2">商品评价</text>
+</view>
+<scroll-view scroll-y scroll-with-animation scroll-into-view="content-{{contentId}}" style="height:100vh">
+  <view id="content-0" class="bg-white">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+  <view id="content-1" class="padding bg-white">
+    <view class="padding-sm solid-bottom">
+      <text class="text-gray">商品名称：</text>
+      <text>{{product.title}}</text>
+    </view>
+    <view class="padding-sm solid-bottom">
+      <text class="text-gray">商品编号：</text>
+      <text>{{product.id}}</text>
+    </view>
+    <view class="padding-sm solid-bottom">
+      <text class="text-gray">分类：</text>
+      <text>{{product.class}}</text>
+    </view>
+
+  </view>
+  <view id="content-2" class="padding bg-white">
+    <view class="flex justify-between">
+      <text>优选评价（{{product.commentCount}}）</text>
+      <view class="text-orange">
+        <text>查看全部</text>
+        <text class="cuIcon-right"></text>
+      </view>
+    </view>
+    <view wx:for="{{product.comment}}" class="padding">
+      <view class="flex align-center">
+        <image class="round" style="width:80rpx;height:80rpx" src="{{item.avatarUrl}}"></image>
+        <text class="padding-sm text-gray">{{item.nickName}}</text>
+        <text class="cuIcon-favorfill text-orange"></text>
+        <text class="{{item.score>1?'cuIcon-favorfill text-orange':'cuIcon-favor'}}"></text>
+        <text class="{{item.score>2?'cuIcon-favorfill text-orange':'cuIcon-favor'}}"></text>
+        <text class="{{item.score>3?'cuIcon-favorfill text-orange':'cuIcon-favor'}}"></text>
+        <text class="{{item.score>4?'cuIcon-favorfill text-orange':'cuIcon-favor'}}"></text>
+      </view>
+      <view class="margin-bottom-sm">{{item.content}}</view>
+      <view class="padding-left" wx:if="{{item.reply}}">
+        <text>小姐姐回复：</text>
+        <text class="text-gray">{{item.reply}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 底部固定栏目 -->
+<view class="cu-tabbar-height"></view>
+<view class="cu-bar foot bg-white solid-top">
+  <button class="flex flex-direction align-center border-right" style="width:100rpx;font-weight:1;font-size:28rpx;margin:0;padding:0 10rpx" open-type="contact">
+    <view class="text-xl">
+      <text class="cuIcon-service"></text>
+    </view>
+    <text>客服</text>
+  </button>
+  <view style="width:650rpx;height:100%" class="flex">
+    <view style="width:50%;height:100%;padding:20rpx 0" class="bg-white flex flex-direction align-center justify-center" bindtap="buy" id="only">
+      <text class="text-price">400</text>
+      <text>单独购买</text>
+    </view>
+    <view style="width:50%;height:100%;padding:20rpx 0" class="bg-red  flex flex-direction align-center justify-center" bindtap="buy" id="group">
+      <text class="text-price">359</text>
+      <text>发起团购</text>
+    </view>
+  </view>
+
+</view>
+
+<!-- 具体弹窗 -->
+<view class="cu-modal bottom-modal {{showSku?'show':''}}"  style="z-index:3" catchtouchmove="preventMove">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white">
+      <view class="action"></view>
+      <view class="action cuIcon-close" bindtap="hideSku"></view>
+    </view>
+    <view style="height:70vh;padding:0 30rpx 30rpx 30rpx">
+      <view class="flex flex-start align-end margin-bottom-sm">
+        <image src="https://yanxuan-item.nosdn.127.net/fa3a0c0d86535882de238593e6271aaa.png?type=webp&quality=90&thumbnail=200x200&imageView" style="width:100px;height:100px"></image>
+        <view>
+          <view class="text-red text-left">价格：￥359</view>
+          <view>已选择：请选择规格</view>
+        </view>
+      </view>
+      <view class="text-left">颜色</view>
+      <view  class="text-left">
+        <text class="cu-btn line-black margin-sm">玫瑰红</text>
+        <text class="cu-btn line-black  margin-sm ">古典灰</text>
+      </view>
+      <view class="text-left">数量</view>
+      <view  class="text-left margin-sm">
+        <text class="cu-btn line-grey" bindtap="minus">-</text>
+        <text class="cu-btn line-black" style="padding:0 40rpx">{{count}}</text>
+        <text class="cu-btn line-black" bindtap="plus">+</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+

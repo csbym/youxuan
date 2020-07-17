@@ -1,0 +1,20 @@
+<!--pages/draw/draw.wxml-->
+<cu-custom bgColor="bg-yellow" isCustom="{{true}}"><view slot="content">积分抽奖小游戏</view></cu-custom>
+<image style="width:100%" mode="widthFix" src="https://yanxuan.nosdn.127.net/15450314384275852.png"></image>
+<view class="margin">
+  <text class="text-bold">抽奖规则:</text>
+  <text>每次抽奖消耗5积分，每天限参与游戏50次</text>
+</view>
+<view class="bg-white radius margin-sm border-yellow flex flex-wrap justify-around" style="padding:15rpx 30rpx">
+  <view wx:for="{{drawList}}">
+    <view wx:if="{{item.id==-1}}" bindtap="getDraw" style="width:180rpx;height:180rpx;border-radius:50%" class="margin-sm flex flex-direction justify-center align-center bg-brown">
+      <text class="text-xxl text-yellow">GO</text>
+      <text class="text-yellow">马上参加</text>
+      <text class="text-yellow">积分抽奖</text>
+    </view>
+    <view style="width:200rpx;height:200rpx;margin-bottom:15rpx" class="border-yellow flex flex-direction align-center justify-center {{drawId==item.id?'bg-red':'bg-yellow light'}}" wx:else>
+      <image src="{{item.image}}" style="width:100rpx;height:100rpx;border-radius:50%"></image>
+      <text class="{{drawId==item.id?'text-yellow':'text-brown'}}">{{item.title}}</text>
+    </view>
+  </view>
+</view>

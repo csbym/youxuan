@@ -1,6 +1,10 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/sign/sign",
+    "pages/group/group",
+    "pages/group/groupList",
+    "pages/draw/draw",
     "pages/order/orderList",
     "pages/order/order",
     "pages/mine/mine",

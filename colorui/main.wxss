@@ -3959,3 +3959,7 @@ scroll-view.cu-steps .cu-item {
 .border-bottom-red{
 	border-bottom: 8rpx solid var(--red);
 }
+
+.border-yellow{
+	border: 1rpx solid rgb(228, 180, 25);
+}

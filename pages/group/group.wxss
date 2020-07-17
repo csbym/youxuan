@@ -1,0 +1,4 @@
+/* pages/group/group.wxss */
+.border-right{
+  border-right: 1rpx solid #ddd;
+}
