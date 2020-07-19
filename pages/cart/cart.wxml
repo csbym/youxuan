@@ -36,7 +36,7 @@
 </view>
 <!-- 底部操作条 -->
 <view class="cu-tabbar-height"></view>
-<view class="cu-bar tabbar bg-white foot solid-bottom" style="bottom:calc(100rpx + env(safe-area-inset-bottom) / 2);">
+<view class="cu-bar tabbar bg-white foot">
   <view class="flex justify-between" style="width:100%">
     <view class="flex align-center">
       <checkbox class="round margin-sm"></checkbox>
@@ -55,24 +55,3 @@
     </view>
   </view>
 </view>
-<view class="cu-tabbar-height"></view>
-<view class="cu-bar tabbar bg-white foot">
-    <navigator class="action text-gray"  url="../index/index"  open-type="redirect">
-      <view class="cuIcon-homefill"></view> 首页
-    </navigator>
-    <navigator class="action text-gray" url="../divide/divide" open-type="redirect">
-      <view class="cuIcon-similar"></view> 分类
-    </navigator>
-    <navigator class="action text-red">
-      <view class="cuIcon-cart">
-        <view class="cu-tag badge">99</view>
-      </view>
-      购物车
-    </navigator>
-    <navigator class="action text-gray" url="../mine/mine"  open-type="redirect">
-      <view class="cuIcon-my">
-        <view class="cu-tag badge"></view>
-      </view>
-      我的
-    </navigator>
-  </view>

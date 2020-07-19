@@ -10,7 +10,7 @@
 </swiper>
 
 <!-- 主要信息 -->
-<view class="bg-white margin-bottom-sm">
+<view class="bg-white padding-bottom-sm">
   <view class="flex justify-between align-center bg-red padding margin-bottom-sm">
     <view>
       <text class="text-price text-xxl">{{product.price}}</text>
@@ -27,7 +27,7 @@
   </view>
 </view>
 <!-- 重要信息 -->
-<view class="bg-white margin-sm">
+<view class="bg-white padding-sm">
     <text class="text-gray">邮费</text>
     <text class="margin-left" wx:if="{{product.express.fee==0}}">快递包邮</text>
     <text class="margin-left" wx:elif="{{product.express.least==0}}">邮费￥{{product.express.fee}}</text>

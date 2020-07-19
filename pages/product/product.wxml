@@ -94,13 +94,13 @@
 <!-- 底部固定栏目 -->
 <view class="cu-tabbar-height"></view>
 <view class="cu-bar foot bg-white flex flex-start align-center solid-top">
-  <button class="flex flex-direction align-center padding-sm" style="width:auto;font-weight:1;font-size:28rpx" open-type="contact">
+  <button class="flex flex-direction align-center padding-sm bg-white" style="width:auto;font-weight:1;font-size:28rpx" open-type="contact">
     <view class="text-xl">
       <text class="cuIcon-service"></text>
     </view>
     <text>客服</text>
   </button>
-  <navigator class="flex flex-direction align-center padding-sm" url="../cart/cart">
+  <navigator class="flex flex-direction align-center padding-sm" open-type="switchTab" url="../cart/cart">
     <view class="text-xl">
       <text class="cuIcon-cart"></text>
     </view>

@@ -24,6 +24,29 @@
     "navigationBarTextStyle":"black",
     "navigationStyle":"custom"
   },
+  "tabBar":{
+    "color":"#aaaaaa",
+    "selectedColor": "#e54d42",
+    "list":[
+      {"pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath":"images/home.png",
+        "selectedIconPath":"images/home_select.png"
+      },{"pagePath":"pages/divide/divide",
+        "text":"分类",
+        "iconPath":"images/divide.png",
+        "selectedIconPath":"images/divide_select.png"
+      },{"pagePath":"pages/cart/cart",
+        "text":"购物车",
+        "iconPath":"images/cart.png",
+        "selectedIconPath":"images/cart_select.png"
+      },{"pagePath":"pages/mine/mine",
+        "text":"我的",
+        "iconPath":"images/mine.png",
+        "selectedIconPath":"images/mine_select.png"
+      }
+    ]
+  },
   "style": "v2",
   
   "usingComponents": {

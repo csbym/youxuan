@@ -3,15 +3,15 @@
 <cu-custom bgColor="bg-cyan" isSearch="{{true}}"></cu-custom>
 
 <!-- 中间分类 -->
-<view class="VerticalBox">
-  <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:100%">
+<view class="VerticalBox bg-white">
+  <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}">
     <view class="cu-item {{index==TabCur?'text-red cur':''}}" wx:for="{{list}}" wx:key="item" bindtap='tabSelect' data-id="{{index}}">
       {{item.name}}
     </view>
   </scroll-view>
-  <scroll-view class="VerticalMain solid-left" scroll-y scroll-with-animation style="height:100vh" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+  <scroll-view class="VerticalMain solid-left" scroll-y scroll-with-animation style="height:90vh" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
     <view class="padding-top padding-lr" wx:for="{{list}}" wx:key="item" id="main-{{index}}">
-      <view class='cu-bar bg-white'>
+      <view class='cu-bar bg-white margin-bottom-sm'>
         <view class='action'>
           <text class='cuIcon-title text-red'></text>{{item.name}} </view>
       </view>
@@ -27,25 +27,5 @@
 </view>
 
 
-<!-- 底部操作条 -->
- <view class="cu-tabbar-height"></view>
- <view class="cu-bar tabbar bg-white foot">
-    <navigator class="action text-gray"  url="../index/index" open-type="redirect">
-      <view class="cuIcon-homefill"></view> 首页
-    </navigator>
-    <navigator class="action text-red">
-      <view class="cuIcon-similar"></view> 分类
-    </navigator>
-    <navigator class="action text-gray" url="../cart/cart"  open-type="redirect">
-      <view class="cuIcon-cart">
-        <view class="cu-tag badge">99</view>
-      </view>
-      购物车
-    </navigator>
-    <navigator class="action text-gray" url="../mine/mine"  open-type="redirect">
-      <view class="cuIcon-my">
-        <view class="cu-tag badge"></view>
-      </view>
-      我的
-    </navigator>
-  </view>
+
+ 
