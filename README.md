@@ -3,15 +3,6 @@
 #### 介绍
 商城类微信小程序前端，采用colorfulUI，模仿网易严选等主流购物app
 
-![主页](https://images.gitee.com/uploads/images/2020/0720/093603_4bc9ccd9_1876642.png "屏幕截图.png")
-![分类](https://images.gitee.com/uploads/images/2020/0720/093705_ab534564_1876642.png "屏幕截图.png")
-![购物车](https://images.gitee.com/uploads/images/2020/0720/093726_7f50d06d_1876642.png "屏幕截图.png")
-![我的](https://images.gitee.com/uploads/images/2020/0720/093747_6dddcb85_1876642.png "屏幕截图.png")
-![团购](https://images.gitee.com/uploads/images/2020/0720/093835_589b116f_1876642.png "屏幕截图.png")
-![团购商品](https://images.gitee.com/uploads/images/2020/0720/094057_91c69b94_1876642.png "屏幕截图.png")
-![签到](https://images.gitee.com/uploads/images/2020/0720/094133_ca3668ee_1876642.png "屏幕截图.png")
-![抽奖](https://images.gitee.com/uploads/images/2020/0720/094151_b2f8de49_1876642.png "屏幕截图.png")
-![地址](https://images.gitee.com/uploads/images/2020/0720/094217_aeec3078_1876642.png "屏幕截图.png")
 
 #### 软件架构
 采用原生微信小程序构架（√已完成，×未完成，？考虑是否需要完成）
@@ -22,6 +13,17 @@
 5. 优惠券 ×
 6. 秒杀 ×
 7. 分销 ？
+
+
+![主页](https://images.gitee.com/uploads/images/2020/0720/093603_4bc9ccd9_1876642.png "屏幕截图.png")
+![分类](https://images.gitee.com/uploads/images/2020/0720/093705_ab534564_1876642.png "屏幕截图.png")
+![购物车](https://images.gitee.com/uploads/images/2020/0720/093726_7f50d06d_1876642.png "屏幕截图.png")
+![我的](https://images.gitee.com/uploads/images/2020/0720/093747_6dddcb85_1876642.png "屏幕截图.png")
+![团购](https://images.gitee.com/uploads/images/2020/0720/093835_589b116f_1876642.png "屏幕截图.png")
+![团购商品](https://images.gitee.com/uploads/images/2020/0720/094057_91c69b94_1876642.png "屏幕截图.png")
+![签到](https://images.gitee.com/uploads/images/2020/0720/094133_ca3668ee_1876642.png "屏幕截图.png")
+![抽奖](https://images.gitee.com/uploads/images/2020/0720/094151_b2f8de49_1876642.png "屏幕截图.png")
+![地址](https://images.gitee.com/uploads/images/2020/0720/094217_aeec3078_1876642.png "屏幕截图.png")
 
 
 #### 安装教程
