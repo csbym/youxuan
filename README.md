@@ -39,6 +39,6 @@ git下载本项目，使用微信开发者工具打开，输入你的appId即可
 如果已有后端可采用本前端开发产品，页面间部分存在未跳转问题，购物车因考虑采用小程序本地缓存，且需后端数据配合，仅制作界面
 若有相关建议，请直接提交issues，个人佛系开发，不定期更新
 也可以鼓励一下送我一瓶饮料
-<img src="https://images.gitee.com/uploads/images/2020/0720/095043_7bc984e4_1876642.png" width="50px"/>
-<img src="https://images.gitee.com/uploads/images/2020/0720/095107_c13c5a45_1876642.png"  width="50px"/>
+<img src="https://images.gitee.com/uploads/images/2020/0720/095043_7bc984e4_1876642.png" width="300px"/>
+<img src="https://images.gitee.com/uploads/images/2020/0720/095107_c13c5a45_1876642.png"  width="300px"/>
 
