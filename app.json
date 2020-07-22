@@ -1,6 +1,9 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/buyNow/buyNow",
+    "pages/coupon/coupon",
+    "pages/coupon/couponList",
     "pages/sign/sign",
     "pages/group/group",
     "pages/group/groupList",

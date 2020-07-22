@@ -3963,3 +3963,10 @@ scroll-view.cu-steps .cu-item {
 .border-yellow{
 	border: 1rpx solid rgb(228, 180, 25);
 }
+
+/* 文字换行隐藏 */
+.text-over-hidden{
+	overflow: hidden; 
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

@@ -65,10 +65,10 @@
       <text class="text-bold text-lg">50</text>
       <text>积分</text>
     </navigator>
-    <view class="flex flex-direction align-center margin-bottom">
+    <navigator class="flex flex-direction align-center margin-bottom" url="../coupon/couponList">
       <text class="text-bold text-lg">2</text>
       <text>优惠券</text>
-    </view>
+    </navigator>
     <view class="flex flex-direction align-center margin-bottom">
       <text class="text-bold text-lg">0</text>
       <text>回馈金</text>
@@ -94,12 +94,12 @@
       <text>分销详情</text>
     </view>
 
-    <view class="flex flex-direction align-center margin-bottom"  style="width:25%">
+    <navigator class="flex flex-direction align-center margin-bottom"  style="width:25%" url="../coupon/coupon">
       <view class="text-xxl">
         <text class="cuIcon-redpacket text-red"></text>
       </view>
       <text>免费领券</text>
-    </view>
+    </navigator>
 
      <navigator class="flex flex-direction align-center margin-bottom"  style="width:25%" url="../draw/draw">
       <view class="text-xxl">

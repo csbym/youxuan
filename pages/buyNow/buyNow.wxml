@@ -1,0 +1,22 @@
+<!--pages/buyNow/buyNow.wxml-->
+<cu-custom bgColor="bg-orange" isCustom="{{true}}">
+  <view slot="content">秒杀专区</view>
+</cu-custom>
+
+<view class="flex justify-start margin border bg-white" wx:for="{{list}}">
+  <image src="{{item.image}}" style="width:250rpx;height:250rpx"></image>
+  <view style="width:440rpx">
+    <view class="text-bold text-lg padding text-over-hidden">{{item.title}}</view>
+    <view class="padding-sm">
+      <text>距结束</text>
+      <text class="margin-left-sm bg-red light" style="padding:5rpx">{{item.time}}</text>
+    </view>
+    <view class="flex justify-between align-end padding-bottom-sm">
+      <view>
+        <text class="text-lg text-orange text-price text-bold">{{item.price}}</text>
+        <text class="text-gray text-line-through text-price">{{item.cost}}</text>
+      </view>
+      <view class="bg-orange" style="border-radius:40rpx;padding:10rpx 20rpx">马上抢</view>
+    </view>
+  </view>
+</view>

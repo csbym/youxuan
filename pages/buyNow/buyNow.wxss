@@ -1,0 +1,4 @@
+/* pages/buyNow/buyNow.wxss */
+page{
+  background: #eee;
+}

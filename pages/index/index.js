@@ -83,6 +83,16 @@ Page({
       url: '../product/product?id='+id,
     })
   },
+  group(){
+    wx.navigateTo({
+      url: '../group/groupList',
+    })
+  },
+  buyNow(){
+    wx.navigateTo({
+      url: '../buyNow/buyNow',
+    })
+  }
 
 
 })

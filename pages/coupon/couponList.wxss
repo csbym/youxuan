@@ -1,0 +1,14 @@
+/* pages/coupon/couponList.wxss */
+page{
+  background: #eee;
+}
+
+.littleCircle{
+  position:absolute;
+  width:35rpx;
+  height:35rpx;
+  border-radius:50%;
+  background:#eee;
+  right:-18rpx;
+  top:100rpx
+}

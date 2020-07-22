@@ -11,6 +11,11 @@ App({
         this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
       }
     })
+
+    wx.showTabBarRedDot({
+      index:3
+    })
+  
     // 登录
     wx.login({
       success: res => {

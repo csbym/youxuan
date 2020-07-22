@@ -29,8 +29,8 @@
      <!-- 秒杀拼团 -->
      <view class="cu-item shadow-blur" style="margin:0 30rpx">
       <view class="flex">
-        <image class="radius-left" style="width:50%" mode="widthFix" src="//m.360buyimg.com/mobilecms/s376x240_jfs/t1/49601/16/12206/115887/5d91b4d5E34709952/aba2bcb4855e6e52.png!q70.jpg.dpg"></image>
-        <image class="radius-right" style="width:50%" mode="widthFix" src="//m.360buyimg.com/mobilecms/s376x240_jfs/t1/32449/33/15631/174497/5cc2d86bE0289110c/9c53e25651659d43.png!q70.jpg.dpg"></image>
+        <image class="radius-left" style="width:50%" mode="widthFix" src="//m.360buyimg.com/mobilecms/s376x240_jfs/t1/49601/16/12206/115887/5d91b4d5E34709952/aba2bcb4855e6e52.png!q70.jpg.dpg" bindtap="buyNow"></image>
+        <image class="radius-right" style="width:50%" mode="widthFix" src="//m.360buyimg.com/mobilecms/s376x240_jfs/t1/32449/33/15631/174497/5cc2d86bE0289110c/9c53e25651659d43.png!q70.jpg.dpg" bindtap="group"></image>
       </view>
     </view>
 

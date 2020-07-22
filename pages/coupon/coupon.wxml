@@ -1,0 +1,24 @@
+<!--pages/coupon/coupon.wxml-->
+<cu-custom bgColor="bg-red"  isCustom="{{true}}">
+  <view slot="content">领券中心</view>
+</cu-custom>
+
+<view class="margin flex radius bg-white" style="position:relative">
+  <view style="width:78%" class="padding">
+    <view>
+      <text class="text-bold text-lg">优选自营店</text>
+      <text class="cuIcon-right"></text>
+    </view>
+    <view class="text-orange text-xxl text-bold">满￥50-￥6</view>
+    <view>（仅能在水果品类使用）</view>
+    <view>使用时间：2020-10-01至2021-10-01</view>
+  </view>
+  <view style="width:22%;" class="radius bg-orange flex flex-direction justify-center align-center" >
+    <text class="text-xxl">领</text>
+    <text class="text-xxl">取</text>
+  </view>
+  <view class="littleCircle"></view>
+</view>
+
+
+
